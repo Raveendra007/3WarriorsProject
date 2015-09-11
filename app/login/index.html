@@ -1,0 +1,65 @@
+<!-- Load stylesheets -->
+	<link type="text/css" rel="stylesheet" href="login/css/style.css" media="screen" />
+	<!-- // Load stylesheets -->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="wrappertop"></div>
+
+		<div id="wrappermiddle">
+
+			<h2>Login</h2>
+
+			<div id="username_input">
+
+				<div id="username_inputleft"></div>
+
+				<div id="username_inputmiddle">
+				<form>
+					<input type="text" name="link" id="url" value="E-mail Address" ng-model="searchForm.emailId">
+					<img id="url_user" src="login/images/mailicon.png" alt="">
+				</form>
+				</div>
+
+				<div id="username_inputright"></div>
+
+			</div>
+
+			<div id="password_input">
+
+				<div id="password_inputleft"></div>
+
+				<div id="password_inputmiddle">
+				<form>
+					<input type="password" name="link" id="url" value="Password" ng-model="searchForm.emailId">
+					<img id="url_password" src="login/images/passicon.png" alt="">
+				</form>
+				</div>
+
+				<div id="password_inputright"></div>
+
+			</div>
+
+			<div id="submit">
+				<form>
+				<input type="image" src="login/images/submit.png" id="" ng-click="verifyLogin()" value="Sign In">
+				</form>
+			</div>
+
+
+		<!--	<div id="links_left">
+
+			<a href="#">Forgot your Password?</a>
+
+		</div> -->
+
+			<!-- <div id="links_right"><a href="#">Not a Member Yet?</a></div> -->
+
+		</div>
+
+		<div id="wrapperbottom"></div>
+
+		<div id="powered">
+		<p>Powered by <a href="">3Warriors</a></p>
+		</div>
+	</div>
