@@ -11,8 +11,7 @@ Licensed under MIT
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
 					<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
-                    <img src="https://prokarma001-my.sharepoint.com/_layouts/15/userphoto.aspx?size=L&username=mbhaskar@prokarma.com" class="img-responsive" alt="">
-
+          <img src="https://prokarma001-my.sharepoint.com/_layouts/15/userphoto.aspx?size=L&username=mbhaskar@prokarma.com" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -28,13 +27,13 @@ Licensed under MIT
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-							<a href="#">
+						<li ng-class="{active:viewOverview}">
+							<a ng-click="viewOverviewFun()">
 							<i class="glyphicon glyphicon-home"></i>
 							Overview </a>
 						</li>
-						<li>
-							<a href="#">
+						<li ng-class="{active:viewAccountSettings}">
+							<a ng-click="viewAccountSettingsFun()">
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
@@ -43,16 +42,16 @@ Licensed under MIT
 							<i class="glyphicon glyphicon-ok"></i>
 							Tasks </a>
 						</li>
-						<li>
+						<li >
 							<a href="#">
 							<i class="glyphicon glyphicon-flag"></i>
 							Help </a>
 						</li>
-                        <li>
-                            <a href="#">
-                            <i class="glyphicon glyphicon-log-out "></i>
-                            Log Out </a>
-                        </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-log-out "></i>
+              Log Out </a>
+            </li>
 					</ul>
 				</div>
 				<!-- END MENU -->

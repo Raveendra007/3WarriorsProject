@@ -9,7 +9,7 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('loginPageCtrl', [function($scope) {
+.controller('loginPageCtrl', ['$scope', function($scope) {
 
   $scope.verifyLogin = function(){
     if($scope.searchForm.emailId === 'Hai'){
