@@ -1,17 +1,10 @@
-<!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
-
 <div class="container">
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
-          <img src="https://prokarma001-my.sharepoint.com/_layouts/15/userphoto.aspx?size=L&username=mbhaskar@prokarma.com" class="img-responsive" alt="">
+          <img src="user/images/user.jpg" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -37,10 +30,10 @@ Licensed under MIT
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
-						<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
+						<li ng-class="{active:searchAnything}">
+							<a ng-click="search()">
+							<i class="glyphicon glyphicon-search"></i>
+							Search </a>
 						</li>
 						<li >
 							<a href="#">
@@ -58,8 +51,53 @@ Licensed under MIT
 			</div>
 		</div>
 		<div class="col-md-9">
-            <div class="profile-content">
-			   <label>Personal details:</label>
+            <div class="main-content">
+            <div id="userForm" ng-show="viewOverview">
+			   <h4>Personal details:</h4>
+			   <div class="userContent">
+				   <p><label>Email Id:</label><span>{{userDetails.empId}}</span></p>
+				   <p><label>Employee Id:</label><span>{{userDetails.emailId}}</span></p>
+				   <p><label>Team:</label><span>{{userDetails.team}}</span></p>
+				   <p><label>Mobile Number:</label><span>{{userDetails.mobileNumber}}</span></p>
+				   <p><label>Voip Number:</label><span>{{userDetails.voipNumber}}</span></p>
+				   <p><label>Desk Location:</label><span><a href="" data-toggle="modal" data-target="#myModal" ng-click="selectedCabin()">{{userDetails.deskLocation}}</a></span></p>
+			   </div>
+			</div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+          <div>
+          <span class="link confernceRoom">C-2</span>
+          <span class="link managerRoom">M-3</span>
+          <span class="link managerRoom">M-2</span>
+          </div>
+          <div style="width: 24%; height: 10px; background: aliceblue; margin-top: 5px; margin-bottom: 1px;"></div>
+          <div>
+          <span class="link employeeCabin downWardFaced" id="B6061"></span>
+          <span class="link employeeCabin rightCabin" id="B6062"></span>
+          <span class="link employeeCabin" id="B6063"></span>
+          <span class="link employeeCabin rightCabin" id="B6064"></span>
+          <span class="link employeeCabin" id="B6065"></span>
+          <span class="link employeeCabin" id="B6066"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- End Modal -->
             </div>
 		</div>
 	</div>
@@ -67,5 +105,3 @@ Licensed under MIT
 <center>
 <strong>Powered by <a href="" target="_blank">3Warriors</a></strong>
 </center>
-<br>
-<br>

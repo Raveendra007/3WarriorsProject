@@ -33,7 +33,63 @@
 /* Profile container */
 body {
   background: #F1F3FA;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
+
+.userContent {
+  margin: 0px auto;
+  display: block;
+  width: 85%;
+}
+
+#userForm {
+position: relative;
+}
+
+#userForm p{
+position: relative;
+float: left;
+width: 100%;
+}
+
+#userForm label{
+position: absolute;
+left: 0px;
+}
+
+#userForm span{
+position: relative;
+float: left;
+width: 100%;
+padding-left: 130px;
+}
+.link
+{
+  background: #fff; padding: 5px 15px; border: 1px solid grey;
+}
+
+.managerRoom{
+  padding: 5px 5px;
+}
+.employeeCabin{
+    padding: 5px;
+    width: 13px;
+    float: left;
+    height: 5px;
+}
+.rightCabin{
+  margin-right: 1px;
+}
+.selectedPlace{
+  background: red;
+}
+
+
+
+
+
+
 
 .profile {
   margin: 20px 0;
@@ -115,7 +171,7 @@ body {
 }
 
 /* Profile Content */
-.profile-content {
+.main-content {
   padding: 20px;
   background: #fff;
   min-height: 460px;
