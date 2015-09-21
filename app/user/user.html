@@ -10,10 +10,10 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Bhaskar Matam
+						{{user.name}}
 					</div>
 					<div class="profile-usertitle-job">
-						Software Engineer
+						{{user.designation}}
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
@@ -31,7 +31,7 @@
 							Account Settings </a>
 						</li>
 						<li ng-class="{active:searchAnything}">
-							<a ng-click="search()">
+							<a ng-click="onClickSearchMenu()">
 							<i class="glyphicon glyphicon-search"></i>
 							Search </a>
 						</li>
@@ -60,9 +60,36 @@
 				   <p><label>Team:</label><span>{{userDetails.team}}</span></p>
 				   <p><label>Mobile Number:</label><span>{{userDetails.mobileNumber}}</span></p>
 				   <p><label>Voip Number:</label><span>{{userDetails.voipNumber}}</span></p>
-				   <p><label>Desk Location:</label><span><a href="" data-toggle="modal" data-target="#myModal" ng-click="selectedCabin()">{{userDetails.deskLocation}}</a></span></p>
+				   <p><label>Desk Location:</label><span><a href="" data-toggle="modal" data-target="#myModal" ng-click="selectedCabin(userDetails.deskLocation)">{{userDetails.deskLocation}}</a></span></p>
 			   </div>
 			</div>
+			<div ng-show="searchAnything">
+				<div>
+				<label>Search Criteria:</label>
+				<select ng-model="searchType" ng-init='Name'>
+               		<option>Name</option>
+               		<option>Employee Id</option>
+               		<option>Team</option>
+            	</select>
+            	<input type="text" ng-model="searchPhrase"/>
+            	<button ng-click="search()">Search</button>
+            	</div>
+            	<div>
+            		<div ng-repeat='user in userResult' class='userResultBlock'>
+            			<div class="profile-userpic">
+          					<img src="user/images/user.jpg" class="img-responsive resultUserImage" alt="">
+						</div>
+            			<div>
+            				<h4 style="color: #7C68E4;margin-left: 90px;position: absolute;">{{user.name}}</h4>
+            				<h6 style="position: absolute;margin-top: 14px;margin-left: 263px;">{{user.designation}}</h6>
+            			</div>
+            			<div style="position: absolute;margin-left: 82px;margin-top: 35px;">
+            				<label style="margin-left: 9px;">Teams:</label><span ng-repeat='team in user.teams'><a href="" style='margin-right:6px;' ng-click='getTeamDetails(team)'>{{team}}</a></span>
+            			</div>
+            			<div style="position: absolute;margin-top: 34px;margin-left: 263px;">Desk Location: <a href="" data-toggle="modal" data-target="#myModal" ng-click="selectedCabin(user.deskLocation)">{{user.deskLocation}}</a></div>
+
+            	</div>
+			</div></div>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -74,11 +101,11 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <!-- <p>Some text in the modal.</p> -->
           <div>
           <span class="link confernceRoom">C-2</span>
-          <span class="link managerRoom">M-3</span>
           <span class="link managerRoom">M-2</span>
+          <span class="link managerRoom">M-3</span>
           </div>
           <div style="width: 24%; height: 10px; background: aliceblue; margin-top: 5px; margin-bottom: 1px;"></div>
           <div>
